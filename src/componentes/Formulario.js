@@ -19,11 +19,11 @@ class Formulario extends Component {
         }
 
         this.numeros = [
-            { id: '1', nome: 'Um' },
-            { id: '2', nome: 'Dois' },
-            { id: '3', nome: 'Três' },
-            { id: '4', nome: 'Quatro' },
-            { id: '5', nome: 'Cinco' }
+            { id: '1', nome: 'Um', situacao: '0' },
+            { id: '2', nome: 'Dois', situacao: '1' },
+            { id: '3', nome: 'Três', situacao: '1' },
+            { id: '4', nome: 'Quatro', situacao: '1' },
+            { id: '5', nome: 'Cinco', situacao: '1' }
         ];
 
         this.handleChange = this.handleChange.bind(this);
@@ -89,6 +89,7 @@ class Formulario extends Component {
                                 label="Estado"
                                 placeholder="Estado..."
                                 ordenar="true"
+                                temSit="false"
                                 value={this.state.estado}
                                 items={this.state.estados}
                                 disabled={false}
@@ -100,6 +101,7 @@ class Formulario extends Component {
                                 label="Município"
                                 placeholder="Município..."
                                 ordenar="true"
+                                temSit="false"
                                 value={this.state.municipio}
                                 items={this.state.municipios}
                                 disabled={this.state.estado === '0'}
@@ -111,6 +113,7 @@ class Formulario extends Component {
                                 label="Números"
                                 placeholder="Números..."
                                 ordenar="false"
+                                temSit="true"
                                 value={this.state.numero}
                                 items={this.numeros}
                                 disabled={this.handleDisabled()}
